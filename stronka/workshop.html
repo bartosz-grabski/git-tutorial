@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+
+            .filename {
+                text-align: right;
+                margin-bottom: 30px;
+                font-style: italic;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <link rel="stylesheet" href="js/highlight.js/styles/github.css">
+        <script src="js/highlight.js/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">Bitowy warsztat z Gita</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li><a href="index.html">Warsztaty</a></li>
+                            <li><a href="preparation.html">Wymagania</a></li>
+                            <li><a href="config.html">Konfiguracja</a></li>
+                            <li class="active"><a href="workshop.html">Przebieg warsztatu</a></li>
+                            <li><a href="commands.html">Polecenia</a></li>
+                            <li><a href="hints.html">Dobre rady</a></li>
+                            <li><a href="../prezentacja/index.html">Prezentacja</a></li>
+                            <li><a href="extra.html">Więcej</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+                   <div class="hero-unit">
+                <h1>Git jest git!</h1>
+                
+                Przyjdź i poznaj jeden z najpopularniejszych systemów kontroli wersji w praktyce.
+            </div>
+            <!-- Example row of columns -->
+            
+              
+
+<div class="span10" style="margin: 0 auto; width: 100%">
+     <h2>Polecenia</h2>
+    <div class="alert alert-success" style="text-align: center;">CZĘŚĆ MNIEJ ZAAWANSOWANA</div>
+    <div class="alert alert-success" style="text-align: center;">STAN 0</div>
+    
+    <div class="row-fluid">
+            <div class="span5">
+              1. Inicjujemy repozytorium:
+              <pre><code class="bash">~ git init</code></pre>
+
+              2. Tworzymy szablon naszego skryptu:
+              <pre><code class="language-python">t = getText()
+f = FontLoader().loadFont('fancyFont/')
+d = TextDrawer()
+d.setFont(f)
+d.draw(t)
+    </code></pre>
+    <p class="filename">converter.py</p>
+
+            3. Sprawdzamy status repozytorium:
+            <pre><code class="bash">~ git status</code></pre>
+
+            4. Dołączamy plik <i>converter.py</i> do najbliższego commita:
+            <pre><code class="bash">~ git add converter.py</code></pre>
+
+            5. Sprawdzamy ponownie status repozytorium:
+            <pre><code class="bash">~ git status</code></pre>
+
+            6. Commitujemy zmiany:
+            <pre><code class="bash">~ git commit -m "Szablon konwertera"</code></pre>
+
+            7. Informujemy lokalne repozytorium o zdalnej lokalizacji:
+            <pre><code class="bash">~ git remote add origin git@github.com:Mequrel/bit-workshop.git</code></pre>
+
+            8. Wrzucamy zmiany do zewnętrznego repozytorium:
+            <pre><code class="bash">~ git push -u origin master</code></pre>
+
+            <div class="alert alert-info">
+            Dzięki -u następnym razem wystarczy samo git push
+        </div>
+
+        </div>
+        <div class="span5">
+          
+        </div>
+      </div>
+    <div class="alert alert-success" style="text-align: center;">STAN 1</div>
+    <div class="row-fluid">
+        <div class="span5">
+       
+        </div>
+        <div class="span5">
+            9. Clonujemy (pobieramy kopię) repozytorium na dysk do bieżącego katalogu:
+            <pre><code class="bash"> ~ git clone git@github.com:Mequrel/bit-workshop.git . </code></pre>
+
+            10. Dopisujemy na początku pliku mock funkcji getText():
+            <pre><code class="language-python">def getText():
+    return 'Git'
+
+t = getText()
+f = FontLoader().loadFont('fancyFont/')
+...
+</code></pre><p class="filename">converter.py</p>
+
+            11. Sprawdzamy status repozytorium:
+            <pre><code class="bash">~ git status</code></pre>
+
+            12. Dołączamy plik <i>converter.py</i> do najbliższego commita:
+            <pre><code class="bash">~ git add converter.py</code></pre>
+
+            13. Commitujemy zmiany:
+            <pre><code class="bash">~ git commit -m "Mock funkcji getText()"</code></pre>
+
+            14. Dodajemy mocki klas odpowiedzialnych za czcionki:
+            <pre><code class="language-python">def getText():
+    return 'Git'
+
+class Font:
+    pass
+
+class FontLoader:
+    def loadFont(self, directory):
+        pass
+
+t = getText()
+f = FontLoader().loadFont('fancyFont/')
+...</code></pre><p class="filename">converter.py</p>
+        
+
+        15. Sprawdzamy zmiany w repozytorium:
+        <pre><code class="bash">~ git diff</code></pre>
+        
+        16. Dołączamy plik <i>converter.py</i> do najbliższego commita:
+        <pre><code class="bash">~ git add converter.py</code></pre>
+
+        17. Commitujemy zmiany:
+        <pre><code class="bash">~ git commit -m "mocki klas odpowiedzialnych za czcionki"</code></pre>
+
+        18. Oglądamy listę dotyczczasowych commitów w postaci tekstowej:
+        <pre><code class="bash">~ git log</code></pre>
+
+        19. oraz w postaci graficznej (DAG):
+        <pre><code class="bash">~ gitk</code></pre>        
+
+        20. Dodajemy mock klasy konwertującej:
+         <pre><code class="language-python">...
+    def loadFont(self, directory):
+        pass
+
+class TextDrawer:
+    def setFont(self, font):
+        pass
+
+    def draw(self, text):
+        pass
+
+
+t = getText()
+...</code></pre><p class="filename">converter.py</p>
+        
+        21. Jednocześnie dodajemy wszystkie pliki i wykonujemy commita:
+        <pre><code class="bash">~ git commit -a -m "mock klasy konwertujacej"</code></pre> 
+
+        22. Synchronizujemy się ze stanem repozytorium zdalnego:
+        <pre><code class="bash">~ git pull</code></pre>
+
+        23. Wysyłamy swoje zmiany do repozytorium zdalnego:
+        <pre><code class="bash">~ git push</code></pre> 
+     </div>
+  </div>
+
+  <div class="alert alert-info"> 
+    Zerknij na repozytorium zdalne przez interfejs githuba (commity, pliki).
+  </div>
+    <div class="alert alert-success" style="text-align: center;">STAN 2</div>
+<div class="row-fluid">
+    <div class="span5">
+        <div class="alert alert-block">
+            @2: Ech, nic z tego kodu nie rozumiem. Za takie nazwy zmiennych można zamordować... Popraw to!
+        </div>
+
+        24. Nie synchronizując się z repozytorium naprawiamy kiepskie nazwy zmiennych:
+        <pre><code class="language-python">text = getText()
+font = FontLoader().loadFont('fancyFont/')
+
+drawer = TextDrawer()
+drawer.setFont(font)
+drawer.draw(text)</code></pre><p class="filename">converter.py</p>
+
+        25. Sprawdzamy status repozytorium:
+        <pre><code class="bash">~ git status</code></pre>
+
+        26. Dołączamy plik <i>converter.py</i> do najbliższego commita:
+        <pre><code class="bash">~ git add converter.py</code></pre>
+
+        27. Commitujemy zmiany:
+        <pre><code class="bash">~ git commit -m "bardziej czytelne nazwy zmiennych"</code></pre>
+
+        28. Pobieramy zmiany z repozytorium:
+        <pre><code class="bash">~ git pull</code></pre>
+        <div class="alert alert-block">
+            Uwaga: pamiętaj, że pull = fetch + merge!
+        </div>
+
+        <div class="alert alert-error">
+            Wystąpił konflikt, tak kończy się brak pulla na początku pracy...
+        </div>
+
+        29. Włączamy mergetoola i rozwiązujemy go sami:
+        <pre><code class="bash">~ git mergetool</code></pre>
+
+        Doprowadzając do postaci:
+        <pre><code class="language-python">def getText():
+    return 'Git'
+
+class Font:
+    pass
+
+class FontLoader:
+    def loadFont(self, directory):
+        pass
+
+class TextDrawer:
+    def setFont(self, font):
+        pass
+
+    def draw(self, text):
+        pass
+
+text = getText()
+font = FontLoader().loadFont('fancyFont/')
+
+drawer = TextDrawer()
+drawer.setFont(drawer)
+font.draw(text)</code></pre><p class="filename">converter.py</p>
+
+        <p>Usuwamy pliki *.orig powstałe w czasie mergowania.</p>
+
+        30. Commitujemy zmiany związane z mergem:
+        <pre><code class="bash">~ git add converter.py</code></pre>
+        <pre><code class="bash">~ git commit -m "Merge"</code></pre>
+
+        31. Wysyłamy zmiany do githuba:
+        <pre><code class="bash">~ git push</code></pre>
+   </div>
+   <div class="span5"></div>
+</div>
+
+<div class="alert alert-success" style="text-align: center;">STAN 3</div>
+
+<div class="alert alert-info">
+Uwaga: teraz dzielimy się funkcjonalnościami. User @1 zajmuje się modułem czcionek a user @2 konwerterem.
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <div class="alert alert-success">Zacznij zdrowo dzień z git pullem! :)</div>
+        32. Pobieramy zmiany z repozytorium:
+        <pre><code class="bash">~ git pull</code></pre>
+
+        <div class="alert alert-info">Wydzielamy sobie czcionkowy stuff do osobnego modułu</div>
+
+        33. Tworzymy plik <i>font.py</i> i przenosimy tam linijki:
+        <pre><code class="language-python">class Font:
+    pass
+
+class FontLoader:
+    def loadFont(self, directory):
+        pass</code></pre><p class="filename">font.py</p>
+
+        34. Dodajemy importy modułów:
+        <pre><code class="language-python">from font import Font, FontLoader
+
+def getText():
+    return 'Git'
+...</code></pre><p class="filename">converter.py</p>
+   
+        35. Commitujemy zmiany:
+        <pre><code class="bash">~ git add converter.py</code></pre>
+        <pre><code class="bash">~ git commit -m "Wydzielony modul czcionek"</code></pre>
+
+        <div class="alert alert-error">Ups! Zapomnieliśmy dodać drugiego pliku!</div>
+
+        36. Dodajemy drugi plik:
+        <pre><code class="bash">~ git add font.py</code></pre>
+
+        37. Dorzucamy zmiany do poprzedniego commita:
+        <pre><code class="bash">~ git commit --amend -m "Wydzielony modul czcionek"</code></pre>
+
+        <div class="alert alert-block">Uwaga! Nigdy nie wolno modyfikować historii commitów, które wyszły poza nasze lokalne repozytorium. Skutki mogą być naprawdę tragiczne...</div>
+
+        38. Wrzucamy zmiany na githuba:
+        <pre><code class="bash">~ git pull</code></pre>
+        <pre><code class="bash">~ git push</code></pre>
+    </div>
+    <div class="span5">
+
+    </div> 
+
+</div>
+
+<div class="alert alert-success" style="text-align: center;">STAN 4</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        40. Dodajemy obsługę nazwy czcionki:
+        <pre><code class="language-python">class Font:
+    def __init__(self, name):
+        self.name = name</code></pre><p class="filename">font.py</p>
+
+        42. Commit, pull i push
+        <pre><code class="bash">~ git commit -a -m "Konstruktor czcionki"
+~ git pull
+~ git push</code></pre>
+    </div>
+    <div class="span5">
+        39. Pobieramy zmiany:
+        <pre><code class="bash">~ git pull</code></pre>
+
+        <div class="alert alert-info">@2 stwierdza, że zanim zacznie tworzyć konwerter musi ustalić jaki interfejs ma Font.</div>
+
+        41. Zmieniamy klasę Font:
+        <pre><code class="language-python">class Font:
+    def __init__(self):
+        self.letters = {}</code></pre><p class="filename">font.py</p>
+
+        43. Commit, pull
+        <pre><code class="bash">~ git commit -a -m "Interfejs czcionki"
+~ git pull</code></pre>
+        <div class="alert alert-error">Pojawił się konflikt... Kdiff3, wybieram Cię!</div>
+
+        44. Włączamy mergetoola
+        <pre><code class="bash">~ git mergetool</code></pre>
+        i doprowadzamy do postaci:
+        <pre><code class="language-python">class Font:
+    def __init__(self, name):
+        self.name = name
+        self.letters = {}</code></pre><p class="filename">font.py</p>
+
+        45. Commit, pull i push
+        <pre><code class="bash">~ git commit -a -m "Merge"
+~ git pull
+~ git push</code></pre>
+
+    </div> 
+
+</div>
+<div class="alert alert-success" style="text-align: center;">STAN 5</div>
+<div class="row-fluid">
+    <div class="span5">
+        46. Pobieramy zmiany:
+        <pre><code class="bash">~ git pull</code></pre>
+
+        48. Przenosimy główne funkcjonalności na początek do funkcji main():
+        <pre><code class="language-python">from font import Font, FontLoader
+
+def main():
+    text = getText()
+    font = FontLoader().loadFont('fancyFont/')
+
+    drawer = TextDrawer()
+    drawer.setFont(font)
+    drawer.draw(text)
+
+def getText():
+    return 'Git'
+
+class TextDrawer:
+    def setFont(self, font):
+        pass
+
+    def draw(self, text):
+        pass
+
+if __name__ == '__main__':
+    main()</code></pre><p class="filename">converter.py</p>
+
+        50. Commit, pull i push
+        <pre><code class="bash">~ git commit -a -m "Glowna czesc programu wrzucona do main()"
+~ git pull
+~ git push</code></pre>
+
+    </div>
+    <div class="span5">
+        47. Ekstraktujemy klasę TextDrawer do osobnego pliku:
+
+        <pre><code class="language-python">class TextDrawer:
+    def setFont(self, font):
+        pass
+
+    def draw(self, text):
+        pass</code></pre><p class="filename">textdrawer.py</p>
+
+                <pre><code class="language-python">from font import Font, FontLoader
+from textdrawer import TextDrawer
+
+def getText():
+...</code></pre><p class="filename">converter.py</p>
+
+        49. Commit
+        <pre><code class="bash">~ git add converter.py
+~ git commit -m "Wydzielony modul textdrawer"</code></pre>
+
+        <div class="alert alert-error">Zapomnieliśmy dorzucić plik textdrawer.py do commita!</div>        
+
+        51. Poprawiamy commit, pull
+        <pre><code class="bash">~ git add textdrawer.py
+~ git commit --amend -m "Wydzielony moduł textdrawer"
+~ git pull</code></pre>
+
+        <div class="alert alert-error">Houston, we have a conflict!</div>
+
+        52. Włączamy mergetoola
+        <pre><code class="bash">~ git mergetool</code></pre>
+        i doprowadzamy do postaci:
+        <pre><code class="language-python">from font import Font, FontLoader
+from textdrawer import TextDrawer
+
+def main():
+    text = getText()
+    font = FontLoader().loadFont('fancyFont/')
+
+    drawer = TextDrawer()
+    drawer.setFont(font)
+    drawer.draw(text)
+
+def getText():
+    return 'Git'
+
+if __name__ == '__main__':
+    main()</code></pre><p class="filename">converter.py</p>
+
+        53. Commit, pull i push
+        <pre><code class="bash">~ git commit -a -m "Merge"
+~ git pull
+~ git push</code></pre>
+ 
+    </div> 
+</div>
+
+<div class="alert alert-success" style="text-align: center;">STAN 6</div>
+
+<div class="alert alert-info" style="text-align: center;">Czas sobie coś pokodzić :)</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        54. Pobieramy zmiany:
+        <pre><code class="bash">~ git pull</code></pre>
+
+        56. Dodajemy czcionki w najprostszy możliwy sposób, żeby tylko działało:
+        <pre><code class="language-python">...
+class FontLoader:
+    def loadFont(self, directory):
+        font = Font("fancy")
+
+        font.letters['G'] = r'''
+  ___ 
+ / __)
+( (_ \
+ \___/
+'''
+        return font</code></pre><p class="filename">font.py</p>
+
+        58. Commitujemy zmiany:        
+        <pre><code class="bash">~ git commit -a -m "Czcionka dla G"</code></pre>
+
+
+        60. Dodajemy literkę I:
+        <pre><code class="language-python">...
+        font.letters['I'] = r'''
+  __  
+ (  ) 
+  )(  
+ (__) 
+'''
+        return font</code></pre><p class="filename">font.py</p>
+
+        62. Commitujemy zmiany:        
+        <pre><code class="bash">~ git commit -a -m "Czcionka dla I"</code></pre>
+
+        64. Dodajemy literkę I:
+        <pre><code class="language-python">...
+        font.letters['T'] = r'''
+ ____ 
+(_  _)
+  )(  
+ (__) 
+'''
+        return font</code></pre><p class="filename">font.py</p>
+
+        66. Commitujemy zmiany:        
+        <pre><code class="bash">~ git commit -a -m "Czcionka dla T"</code></pre>
+
+        67. Synchronizujemy się z repozytorium zdalnym:
+        <pre><code class="bash">~ git pull
+~ git push</code></pre>
+
+
+    </div>
+    <div class="span5">
+        55. Pobieramy zmiany:
+        <pre><code class="bash">~ git pull</code></pre>
+
+        57. Dodajemy setter czcionki do naszego konwertera:
+        <pre><code class="language-python">class TextDrawer:
+    def setFont(self, font):
+        self.font = font
+
+    def draw(self, text):
+        pass</code></pre><p class="filename">textdrawer.py</p>
+
+        59. Commitujemy zmiany:        
+        <pre><code class="bash">~ git commit -a -m "ustawianie czcionki w konwerterze"</code></pre>
+
+        61. Implementujemy funkcje draw:
+        <pre><code class="language-python">...
+    def draw(self, text):
+        for character in text:
+            print self.font.letters[character.upper()]</code></pre><p class="filename">textdrawer.py</p>
+
+        63. Commitujemy zmiany:        
+        <pre><code class="bash">~ git commit -a -m "prosta implementacja drukowania czcionek"</code></pre>
+
+        65. Synchronizujemy się z repozytorium zdalnym:
+        <pre><code class="bash">~ git pull
+~ git push</code></pre>
+        
+
+    </div> 
+</div>
+<div class="alert alert-info" style="text-align: center;">Zauważ automatycznego merge'a, który pojawił się w repozytorium!</div>
+<div class="alert alert-success" style="text-align: center;">STAN 7</div>
+
+<div class="alert alert-success" style="text-align: center;">Czas na pierwsze testy!</div>
+
+<div class="span9" style="text-align: center;"><pre><code class="bash">~ python converter.py</code></pre></div>
+
+
+
+<div class="row-fluid">
+    <div class="span5">
+        
+    </div>
+    <div class="span5">
+        <div class="alert alert-block">W katalogu po uruchomieniu pojawiły się pliki *.pyc</div>
+
+        <div class="alert alert-block">Pliki binarne nie są mile widziane w repozytorium! Szczególnie te, które powstają z kompilacji projektu.</div>                    
+
+        <div class="alert alert-block">Chcemy się ich pozbyć bo przeszkadzają w stage'owaniu!</div>
+
+        66. Pobieramy zmiany:
+        <pre><code class="bash">~ git pull</code></pre>
+
+        67. Sprawdzamy status repozytorium:
+        <pre><code class="bash">~ git status</code></pre>
+
+        67. Dodajemy plik .gitignore:
+        <pre><code>*.pyc</code></pre><p class="filename">.gitignore</p>
+
+        68. Sprawdzamy status repozytorium i odnotowujemy brak plików *.pyc:
+        <pre><code class="bash">~ git status</code></pre>
+
+        69. Commitujemy i wrzucamy do repozytorium:
+        <pre><code class="bash">~ git add .gitignore
+~ git commit -m ".gitignore"
+~ git pull
+~ git push</code></pre>
+
+    </div> 
+</div>
+
+
+<div class="alert alert-success" style="text-align: center;">STAN 8</div>
+
+
+<div class="alert alert-success" style="text-align: center;">CZĘŚĆ BARDZIEJ ZAAWANSOWANA</div>
+
+
+
+<div class="row-fluid">
+    <div class="span5">
+        70. Pobieramy zmiany:
+        <pre><code class="bash">~ git pull</code></pre>
+
+        71. Listujemy branche:
+        <pre><code class="bash">~ git branch</code></pre>        
+
+        72. Tworzymy ficzer brancha file-font-loader:
+        <pre><code class="bash">~ git branch file-font-loader</code></pre>        
+
+        73. Listujemy branche ponownie:
+        <pre><code class="bash">~ git branch</code></pre>        
+
+        74. Zmieniamy brancha:
+        <pre><code class="bash">~ git checkout file-font-loader</code></pre>        
+
+        75. Listujemy branche jeszcze raz:
+        <pre><code class="bash">~ git branch</code></pre>        
+
+        76. Zaczynamy implementować wczytywanie czcionek z pliku:
+        <pre><code class="language-python">class FontLoader:
+    def loadFont(self, directory):
+        font = self.getFont(directory)
+
+    def getFont(self, directory):
+        pass</code></pre><p class="filename">font.py</p>
+
+        77. Stwierdzamy, że to jest bez sensu. Wracamy do stanu pliku po ostatnim commicie:
+        <pre><code class="bash">~ git checkout -- font.py</code></pre>
+
+        78. Tworzymy katalog <i>fancyFont/</i> a w nim trzy pliki (przenosimy zahardkodowane czcionki do plików):
+        <pre><code>  ___ 
+ / __)
+( (_ \
+ \___/</code></pre><p class="filename">fancyFont/G</p>
+
+         <pre><code>  __  
+ (  ) 
+  )(  
+ (__) </code></pre><p class="filename">fancyFont/I</p>
+
+         <pre><code> ____ 
+(_  _)
+  )(  
+ (__) </code></pre><p class="filename">fancyFont/T</p>
+
+        Oraz doprowadzamy klasę <i>FontLoader</i> do postaci:
+
+        <pre><code class="language-python">class FontLoader:
+    def loadFont(self, directory):
+        font = Font("fancy")
+        return font</code></pre><p class="filename">font.py</p>
+
+        79. Commitujemy zmiany:        
+        <pre><code class="bash">~ git add fancyFont/*
+~ git commit -a -m "czcionki wydzielone do plikow"</code></pre>
+
+        80. Przełączamy się na brancha master i zauważamy, że tu wszystko działa:
+        <pre><code class="bash">~ git checkout master
+~ python converter.py
+~ git log</code></pre>
+
+        81. Wracamy na ficzer brancha:
+        <pre><code class="bash">~ git checkout file-font-loader</code></pre>
+
+        82. Dopisujemy wczytywanie czcionek z pliku:
+        <pre><code class="language-python">class FontLoader:
+    def loadFont(self, directory):
+        font = Font("fancy")
+
+        for filename in os.listdir(directory):
+            font.letters[filename] = readFile(directory+filename)
+
+        return font
+
+def readFile(filename):
+    return open(filename).read()</code></pre><p class="filename">textdrawer.py</p>
+
+        83. Commitujemy:
+        <pre><code class="bash">~ git commit -a -m "Czcionki wczytywane z plikow"</code></pre>
+
+        84. Dokładamy jeszcze trzy literki: E, J i S
+        <pre><code> ____ 
+(  __)
+ ) _) 
+(____)</code></pre><p class="filename">fancyFont/E</p>
+
+         <pre><code>   __ 
+ _(  )
+/ \) \
+\____/</code></pre><p class="filename">fancyFont/J</p>
+
+         <pre><code> ____ 
+/ ___)
+\___ \
+(____/</code></pre><p class="filename">fancyFont/S</p>
+    
+        85. Commitujemy:
+        <pre><code class="bash">~ git add fancyFont/*
+~ git commit -a -m "Czcionki dla liter E, J i S"</code></pre>
+
+        86. Przeglądamy historię zmian:
+        <pre><code class="bash">~ git log
+~ gitk</code></pre>                
+
+    </div>
+    <div class="span5">
+        70. Pobieramy zmiany:
+        <pre><code class="bash">~ git pull</code></pre>
+
+        71. Listujemy branche:
+        <pre><code class="bash">~ git branch</code></pre>        
+
+        72. Tworzymy ficzer brancha horizontal-text-drawer:
+        <pre><code class="bash">~ git branch horizontal-text-drawer</code></pre>        
+
+        73. Listujemy branche ponownie:
+        <pre><code class="bash">~ git branch</code></pre>        
+
+        74. Zmieniamy brancha:
+        <pre><code class="bash">~ git checkout horizontal-text-drawer</code></pre>        
+
+        75. Listujemy branche jeszcze raz:
+        <pre><code class="bash">~ git branch</code></pre>        
+
+        76. Zaczynamy implementować wyświetlanie w jednej linii:
+        <pre><code class="language-python">    def draw(self, text):
+        for character in text:
+            self.printCharacter(self.font.letters[character.upper()])
+
+    def printCharacter(self, character):
+        print character</code></pre><p class="filename">textdrawer.py</p>
+
+        77. Commitujemy:
+        <pre><code class="bash">~ git commit -a -m "Ekstrakcja wyświetlania litery"</code></pre>
+
+        78. Stwierdzamy, że popełniliśmy głupotę. Cofamy się o jeden commit:
+        <pre><code class="bash">~ git reset HEAD~1 --hard</code></pre>        
+        <div class="alert alert-block">Gdybyśmy chcieli tylko cofnąć samego commita, nie anulując zmian, które on wprowadził, to wywołujemy ~ git reset HEAD~1 --soft</div>
+
+        79. Dodajemy funkcje appendCharacter (nie w klasie):
+        <pre><code class="language-python">...
+    def draw(self, text):
+        for character in text:
+            print self.font.letters[character.upper()]
+
+
+def appendLetter(text, letter):
+    for i in xrange(len(text)):
+        text[i] += letter[i]
+
+    return text</code></pre><p class="filename">textdrawer.py</p>
+
+        80. Commitujemy:
+        <pre><code class="bash">~ git commit -a -m "Funkcja sklejajaca literki poziomo"</code></pre>
+
+        81. Przełączamy się na brancha master i zauważamy, że tu wszystko działa:
+        <pre><code class="bash">~ git checkout master
+~ python converter.py
+~ git log</code></pre>
+
+        82. Wracamy na ficzer brancha:
+        <pre><code class="bash">~ git checkout file-font-loader</code></pre>
+
+        83. Dodajemy funkcje dzielącą czcionkę na linijki:
+        <pre><code class="language-python">...
+    def draw(self, text):
+        for character in text:
+            print self.font.letters[character.upper()]
+
+def splitLetter(letter):
+    return letter.split('\n')
+
+def appendLetter(text, letter):
+...</code></pre><p class="filename">textdrawer.py</p>
+
+        84. Commitujemy:
+        <pre><code class="bash">~ git commit -a -m "Dzielenie czcionki na linijki"</code></pre>
+
+        85. Wykorzystując napisane funkcje implementujemy metodę draw:
+        <pre><code class="language-python">...
+    def draw(self, text):
+        firstLetter = self.font.letters[text[0].upper()]
+        drawing = splitLetter(firstLetter)
+
+        for character in text[1:]:
+             letter = splitLetter(self.font.letters[character.upper()])
+             drawing = appendLetter(drawing, letter)
+
+        for line in drawing:
+             print line
+...</code></pre><p class="filename">textdrawer.py</p>
+
+        86. Commitujemy:
+        <pre><code class="bash">~ git commit -a -m "Rysowanie horyzontalne"</code></pre>
+
+        87. Przeglądamy historię zmian:
+        <pre><code class="bash">~ git log
+~ gitk</code></pre>
+
+    </div> 
+</div>
+
+<div class="alert alert-success" style="text-align: center;">STAN 9</div>
+
+<div class="alert alert-info" style="text-align: center;">Czas na podzielenie się z innymi naszymi dokonaniami.</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        xx. Przełączamy się na master brancha:
+        <pre><code class="bash">~ git checkout master</code></pre>    
+
+        xx. Synchronizujemy się:
+        <pre><code class="bash">~ git pull</code></pre>
+
+        xx. Mergujemy ficzer branch do mastera:
+        <pre><code class="bash">~ git merge file-font-loader</code></pre>  
+
+        xx. Wrzucamy to do repozytorium:
+        <pre><code class="bash">~ git pull
+~ git push</code></pre>
+    </div>
+    <div class="span5">
+        xx. Przełączamy się na master brancha:
+        <pre><code class="bash">~ git checkout master</code></pre>    
+
+        xx. Synchronizujemy się:
+        <pre><code class="bash">~ git pull</code></pre>
+
+        xx. Mergujemy ficzer branch do mastera:
+        <pre><code class="bash">~ git merge horizontal-text-drawer</code></pre>  
+
+        xx. Wrzucamy to do repozytorium:
+        <pre><code class="bash">~ git pull
+~ git push</code></pre>
+    </div>
+</div>
+
+<div class="alert alert-success" style="text-align: center;">STAN 10</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        
+    </div>
+    <div class="span5">
+        xx. Pobieramy zmiany:
+        <pre><code class="bash">~ git pull</code></pre>
+
+        xx. Zaczynamy implementować wczytywanie tekstu:
+        <pre><code class="language-python">...        
+def getText():
+    return sys.argv[0]
+...</code></pre><p class="filename">converter.py</p>
+        
+        <div class="alert alert-info">Musimy natychmiastowo przerwać pracę i zabrać się za ważniejsz rzecz. Nie chcemy jednak tracić tego co do tej pory napisaliśmy, z drugiej strony nie chcemy jeszcze commitować.</div>
+
+
+        xx. Stashujemy zmiany:
+        <pre><code class="bash">~ git stash</code></pre>
+
+        xx. Sprawdzamy status repozytorium:
+        <pre><code class="bash">~ git status</code></pre>        
+
+        xx. Dorzucamy sprawdzanie czy tekst przypadkiem nie jest pusty:
+        <pre><code class="language-python">... 
+    def draw(self, text):
+        if text:
+            firstLetter = self.font.letters[text[0].upper()]
+            drawing = splitLetter(firstLetter)
+
+            for character in text[1:]:
+                 letter = splitLetter(self.font.letters[character.upper()])
+                 drawing = appendLetter(drawing, letter)
+
+            for line in drawing:
+                print line
+
+...</code></pre><p class="filename">textdrawer.py</p>
+
+        xx. Commitujemy
+        <pre><code class="bash">~ git commit -a -m "Obsluga pustego napisu w textdrawerze"</code></pre>
+
+        xx. Listujemy stos stashy:
+        <pre><code class="bash">~ git stash list</code></pre>        
+
+        xx. Wracamy do stanu sprzed sytuacji wyjątkowej:
+        <pre><code class="bash">~ git stash apply</code></pre>        
+
+        xx. Usuwamy stasha ze stosu:
+        <pre><code class="bash">~ git stash drop</code></pre>                
+
+        xx. Kończymy implementować pobieranie tekstu jeśli jeszcze go nie mieliśmy w całości zrobionego:
+        <pre><code class="language-python">from font import Font, FontLoader
+from textdrawer import TextDrawer
+import sys
+
+def main():
+
+...        
+
+def getText():
+    return sys.argv[0]
+...</code></pre><p class="filename">converter.py</p>
+
+        xx. Commitujemy i synchronizujemy się z repozytorium:
+        <pre><code class="bash">~ git commit -a -m "Pobieranie tekstu z argumentu programu"
+~ git pull
+~ git push</code></pre>
+
+        
+    </div> 
+</div>
+
+<div class="alert alert-success" style="text-align: center;">STAN 11</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        xx. Pobieramy zmiany:
+        <pre><code class="bash">~ git pull</code></pre>
+
+        xx. Przełączmy się na brancha file-font-loader:
+        <pre><code class="bash">~ git checkout file-font-loader</code></pre>
+
+        xx. Dokładamy czcionkę dla spacji w pliku o nazwie '-':
+        <pre><code>      
+      
+      
+      </code></pre><p class="filename">fancyFont/-</p>
+
+        xx. Sprawdzamy status repozytorium
+        <pre><code class="bash">~ git status</code></pre>
+
+        <div class="alert alert-error">Ups, jesteśmy na ficzer branchu, a powinniśmy to wrzucić na master. Nie chce mi się tego zmieniać drugi raz...</div>
+
+        xx. Stashowanie dotyczy jedynie trackowanych plików, więc:
+        <pre><code class="bash">~ git add fancyFont/*</code></pre>
+
+        xx. Stashujemy zmiany:
+        <pre><code class="bash">~ git stash</code></pre>
+
+        xx. Zmieniamy brancha:
+        <pre><code class="bash">~ git checkout master</code></pre>
+
+        xx. Listujemy stos stashy:
+        <pre><code class="bash">~ git stash list</code></pre>        
+
+        xx. Wrzucamy zmiany ze stosu:
+        <pre><code class="bash">~ git stash apply</code></pre>        
+
+        xx. Usuwamy stasha ze stosu:
+        <pre><code class="bash">~ git stash drop</code></pre>        
+
+        xx. Commitujemy i synchronizujemy się z repozytorium:
+        <pre><code class="bash">~ git add fancyFont/*
+~ git commit -a -m "Pobieranie tekstu z argumentu programu"
+~ git pull
+~ git push</code></pre>
+
+        <div class="alert alert-info">Dobrze jest usuwać ficzer branche po zmergowaniu, jeśli już nie są potrzebne.</div>
+
+        xx. Usuwamy brancha file-font-loader:
+        <pre><code class="bash">~ git branch -d file-font-loader</code></pre>        
+
+    </div>
+    <div class="span5">
+
+    </div> 
+</div>
+
+<div class="alert alert-success" style="text-align: center;">STAN 12</div>
+
+
+<div class="row-fluid">
+    <div class="span5">
+                
+    </div>
+    <div class="span5">
+        xx. Pobieramy zmiany:
+        <pre><code class="bash">~ git pull</code></pre>
+
+        xx. Usuwamy brancha horizontal-text-drawer:
+        <pre><code class="bash">~ git branch -d horizontal-text-drawer</code></pre>        
+
+        xx. Dokładamy sprawdzanie liczby podanych argumentów:
+        <pre><code class="language-python">...
+ def getText():
+    if len(sys.argv) != 1:
+        print "Bad arguments"
+        sys.exit(1)
+
+    return sys.argv[0]
+...</code></pre><p class="filename">converter.py</p>
+        
+        xx. Commit + sychronizacja:
+        <pre><code class="bash">~ git commit -a -m "Sprawdzanie liczby argumentow"
+~ git pull
+~ git push</code></pre>
+
+        <div class="alert alert-error">Ups! Przecież długość listy argumentów jest zawsze o jeden większa niż faktyczna ich liczba! Problem w tym, że to już poszło na GitHuba</div>
+
+        <div class="alert alert-block">Mamy dwie opcje: poprawa i nowy commit, lub commit który wywala wszystko i nowy commit. Git oferuje automatyczne stworzenie takiego commita.</div>        
+
+        <div class="alert alert-error">Nigdy, przenigdy nie próbuj używać --amend lub jakichkolwiek innych mechanizmów zmiany historii na elementach, które ujrzały światło dzienne. Żeby nie było, że nie ostrzegałem!</div>        
+
+        xx. Generujemy automatycznie commita przywracającego stan:
+        <pre><code class="bash">~ git revert HEAD</code></pre>
+
+        xx. Piszemy to sprawdzenie tak jak trzeba:
+        <pre><code class="language-python">...
+ def getText():
+    if len(sys.argv) != 2:
+        print "Bad arguments"
+        sys.exit(1)
+
+    return sys.argv[0]
+...</code></pre><p class="filename">converter.py</p>
+
+        xx. Commit + sychronizacja:
+        <pre><code class="bash">~ git commit -a -m "Poprawne sprawdzanie liczby argumentow"
+~ git pull
+~ git push</code></pre>
+        
+    </div> 
+</div>
+
+<div class="alert alert-success" style="text-align: center;">STAN 13</div>
+
+<div class="alert alert-success" style="text-align: center;">Testujemy?</div>
+<div class="row-fluid">
+<div class="span12" style="text-align: center;"><pre><code class="bash">~ python converter.py git</code></pre></div>
+</div>
+
+<div class="alert alert-error" style="text-align: center;">Ech, który to [0] wstawił do kodu, co?</div>
+
+<div class="row-fluid">
+
+    <div class="span5"></div>
+    <div class="span5">
+        xx. Pobieramy zmiany:
+        <pre><code class="bash">~ git pull</code></pre>
+
+        xx. Sprawdzmy, kto ostatni edytował felerną linijkę:
+        <pre><code class="bash">~ git blame converter.py</code></pre>
+
+        xx. Zmieniamy ją na poprawną:
+        <pre><code class="language-python">...
+ def getText():
+    if len(sys.argv) != 2:
+        print "Bad arguments"
+        sys.exit(1)
+
+    return sys.argv[1]
+...</code></pre><p class="filename">converter.py</p>     
+        
+        xx. Commit + sychronizacja:
+        <pre><code class="bash">~ git commit -a -m "Poprawne sprawdzanie liczby argumentow"
+~ git pull
+~ git push</code></pre>
+    </div> 
+</div>
+
+<div class="row-fluid">
+
+    <div class="span5"> 
+        xx. Pobieramy zmiany:
+        <pre><code class="bash">~ git pull</code></pre>
+    </div>
+    <div class="span5"> </div>
+
+</div>
+
+<div class="alert alert-success" style="text-align: center;">STAN 14</div>
+
+<div class="row-fluid">
+<div class="span12" style="text-align: center;"><pre><code class="bash">~ python converter.py git-jest-git</code></pre></div>
+</div>
+<div class="alert alert-success" style="text-align: center;">Gratulacje!</div>
+
+    
+</div>
+
+
+
+
+            <div class="row"></div>
+
+            <hr>
+
+            <footer>
+                <p>&copy; Bartłomiej Szczepanik, BIT AGH 2012</p>
+            </footer>
+
+        </div> <!-- /container -->
+
+       <!-- <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/main.js"></script> -->  
+    </body>
+</html>
+
+

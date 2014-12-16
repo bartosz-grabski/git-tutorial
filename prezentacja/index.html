@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="mequrel">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>GIT</h1>
+					<h3>Wprowadzenie</h3>
+					<p>
+						<small>
+							Bartłomiej Szczepanik / 
+							<a href="http://twitter.com/bszczepanik">@bszczepanik</a>
+						</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Agenda</h2>
+					<ol>
+						<li> (D)CVS - systemy kontroli wersji </li>						
+						<li> Czym jest git? </li>
+						<li> github.com </li>
+						<li> Organizacja warsztatu </li>
+						<li> Podstawowy workflow </li>
+						<li> Warsztat - część I</li>
+						<li> Bardziej zaawansowane techniki </li>
+						<li> Warsztat - część II </li>
+						<li> Podsumowanie </li>
+						<li> Q&amp;A </li>
+						<li> Niespodzianka </li>
+					</ol>
+				</section>
+
+				<section>
+					<section>
+						<h2>Systemy kontroli wersji</h2>
+						<h3>Czyli trochę historii...</h3>						
+					</section>
+					<section>
+						<h2> Po co nam to? </h2>
+
+						<ul>
+							<li class="fragment">Synchronizacja zmian pomiędzy zespołem</li>
+							<li class="fragment"> Wersjonowanie kodu źródłowego </li>
+						</ul>	
+					</section>
+
+					<section>
+						<h2> Jak spełnić te potrzeby? </h2>
+
+						<ul>
+							<li class="fragment">Pendrive ?</li>
+							<li class="fragment">Mail ?</li>
+							<li class="fragment">Dropbox ?</li>
+							<li class="fragment">Google docs ?</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>VCS</h2>
+						<p>Version Control System</p>
+
+						<ul>
+							<li class="fragment">CVS</li>
+							<li class="fragment">SVN</li>
+							<li class="fragment">ClearCase</li>
+							<li class="fragment">TFS</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>DVCS</h2>
+						<p>Distributed Version Control System</p>
+
+						<ul>
+							<li class="fragment">Git</li>
+							<li class="fragment">Hg (Mercurial)</li>
+							<li class="fragment">Bazaar</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Git</h2>
+						<p>
+							
+						</p>
+					</section>
+					<section>
+						<h2>Git</h2>
+						<p>
+							Acceptance criteria Linusa Torvaldsa:
+						</p>
+						<ul>
+							<li>Wziąć przykład z CVS, czego nie robić.</li>
+							<li>System powinien być rozproszony.</li>
+							<li>System powinien być chroniony przed błędami w repozytorium (przypadkowymi, jak awaria twardego dysku, jak i złośliwymi, wprowadzonymi przez kogoś).</li>
+							<li>System powinien być szybki.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Git</h2>
+						<p> Zalety Gita </p>
+						<ul>
+							<li class="fragment">Popularność (GitHub!)</li>
+							<li class="fragment">Brak centralizacji</li>
+							<li class="fragment">Branche, brache, branche</li>
+							<li class="fragment">Możliwość szybkiego przełączenia kontekstu pracy</li>
+							<li class="fragment">Prosty rozwój wielu linii produkcyjnych oprogramowania</li>
+							<li class="fragment">Feature based workflow</li>
+							<li class="fragment">Lokalne commity, dowolność w eksperymentowaniu nad kodem</li>
+						</ul>
+
+					</section>
+					
+				</section>
+
+				<section>
+					<section>
+						<h2>GitHub</h2>
+						<p>Centrum dzisiejszego świata open source</p>
+					</section>
+					<section>
+						<h2>GitHub</h2>
+						<p>Koszty</p>
+						<ul>
+							<li class="fragment">Projekty z otwartym źródłem w wersji darmowej (każdy może stworzyć własnego forka)</li>
+							<li class="fragment">Projekty z zamkniętym źródłem w wersji komercyjnej</li>						
+						</ul>
+					</section>
+					<section>
+						<h2>GitHub</h2>
+						<p>Funkcjonalności</p>
+						<ul>
+							<li class="fragment">Repozytorium Gita</li>
+							<li class="fragment">Wiki</li>						
+							<li class="fragment">Issue tracker</li>						
+							<li class="fragment">Pull requests</li>		
+						</ul>
+					</section>
+					<section>
+						<h2>GitHub</h2>
+						<p>Główna konkurencja - Bitbucket</p>
+						<ul>
+							<li class="fragment">Projekty z zamkniętym źródłem w wersji darmowej (max 5 osób)</li>
+							<li class="fragment">Licencja akademicka po rejestracji z adresem email w domenie .edu </li>						
+							<li class="fragment">Obsługuje poza gitem także Hg (Mercurial)</li>
+						</ul>
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						<h2>Warsztat</h2>
+						<p>Kilka spraw organizacyjnych</p>
+					</section>
+					<section>
+						<h2>Warsztat</h2>
+						<p>Efekt końcowy: tworzymy prościutki, ale w pełni działający skrypt w Pythonie</p>
+					</section>
+					<section>
+						<h2>Warsztat</h2>
+						<p>Dwie opcje pracy:</p>
+						<ul>
+							<li>w parach</li>
+							<li>pojedynczo</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Warsztat</h2>
+						<p>Praca w parze - polecana</p>
+						<ul>
+							<li>Kod synchronizujemy przez repozytorium na GitHubie, które stworzy jedna z osób w parze</li>
+							<li>Wybieramy sobie role z przedziału [1;2]</li>
+							<li>W zależności od roli interesować nas będzie lewa lub prawa kolumna poleceń, które będę przedstawiał.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Warsztat</h2>
+						<p>Praca w pojedynkę</p>
+						<ul>
+							<li>Symulujemy pracę w dwie osoby</li>
+							<li>Dwa różne repozytoria na dysku synchronizowane przez GitHuba</li>
+							<li>Będzie trzeba szybko klepać :)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Warsztat</h2>
+						<p>Skrypt mayday</p>
+						<ul>
+							<li>Umożliwia szybkie przywrócenie repozytorium do poprzedniego stanu jeśli coś zepsuliśmy</li>
+							<li>Umożliwia szybkie przeskoczenie krok dalej jeśli zabrakło nam czasu</li>
+							<li>Stany są wyraźnie oznaczone na stronie z listą poleceń</li>
+							<li>Uwaga! Skrypt modyfikuje repozytorium na GitHubie. Jeśli jedna osoba przywróci repozytorium do określonego stanu, druga też to musi zrobić. Osobie pracującej w pojedynkę wystarczy uruchomienie polecenia tylko raz.</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Podstawowy workflow</h2>
+						<p>Konfiguracja Gita</p>
+					</section>
+					<section>
+						<h2>Podstawowy workflow</h2>
+						<p>Stage'owanie</p>
+					</section>
+					<section>
+						<h2>Podstawowy workflow</h2>
+						<p>Commitowanie</p>
+					</section>
+					<section>
+						<h2>Podstawowy workflow</h2>
+						<p>Synchronizacja (pullowanie i pushowanie)</p>
+					</section>
+					<section>
+						<h2>Podstawowy workflow</h2>
+						<p>Mergowanie i rozwiązywanie konfliktów</p>
+					</section>
+					<section>
+						<h2>Podstawowy workflow</h2>
+						<p>Ignorowanie</p>
+					</section>
+					<section>
+						<h2>Podstawowy workflow</h2>
+						<p>(([work][stage][commit])+[pull]([mergetool][commit])?[push])+</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Warsztat</h2>
+					<p>Część I</p>
+				</section>
+				<section>
+					<section>
+						<h2>Bardziej zaawansowane techniki</h2>
+						<p>Branchowanie</p>
+					</section>
+					<section>
+						<h2>Bardziej zaawansowane techniki</h2>
+						<p>Stashowanie</p>
+					</section>
+					<section>
+						<h2>Bardziej zaawansowane techniki</h2>
+						<p>Cofanie zmian - checkoutowanie</p>
+					</section>
+					<section>
+						<h2>Bardziej zaawansowane techniki</h2>
+						<p>Cofanie zmian - resetowanie</p>
+					</section>
+					<section>
+						<h2>Bardziej zaawansowane techniki</h2>
+						<p>Cofanie zmian - revertowanie</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Warsztat</h2>
+					<p>Część II</p>
+				</section>
+				<section>
+					<section>
+					<h2>Podsumowanie</h2>
+					<p>Kilka dobrych rad:</p>
+					<ul>
+						<li class="fragment">Commituj często</li>
+						<li class="fragment">Synchronizuj często głównego brancha</li>
+						<li class="fragment">Trzymaj się na początku z daleka od git rebase</li>
+						<li class="fragment">Nigdy, przenigdy nie używaj poleceń modyfikujących historię repozytorium na elementach istniejących już w centralnym repozytorium!</li>
+						<li class="fragment">Nie wrzucaj do repozytorium niekompilującego się kodu</li>
+					</ul>
+				</section>
+
+
+					<section>
+					<h2>Podsumowanie</h2>
+					<p>Kilka dobrych rad c.d.:</p>
+					<ul>
+						<li class="fragment">Naprawiaj wszystkie konflikty, nigdy nie wrzucaj ich do repozytorium</li>
+						<li class="fragment">Wykorzystaj GUI lub IDE przynajmniej do commitowania</li>
+						<li class="fragment">Stwórz własne aliasy dla poleceń lub użyj gotowych nakładek</li>
+						<li class="fragment">Unikaj binarek (blobów) w repozytorium i zadbaj o porządny .gitignore</li>
+					</ul>
+				</section>
+				
+				</section>
+
+				<section>
+					<h2>Q&amp;A</h2>
+					<p>
+						
+					</p>
+				</section>
+
+				<section>
+					<h2>Niespodzianka</h2>
+					<p>Idea Factory</p>
+
+					
+					<small>
+						Ankieta na termin spotkania organizacyjnego: <a href="http://bit.ly/Y7npz2">http://bit.ly/Y7npz2</a>
+					</small>
+				</section>
+
+				<section>
+					<h1>Dziękuje za uwagę</h1>
+					<p>
+						<small>
+						Ankieta: <a href="http://bit.ly/Y70Pqp">http://bit.ly/Y70Pqp</a>
+					</small>
+				</p><p>
+						<small>
+							Bartłomiej Szczepanik / 
+							<a href="http://twitter.com/bszczepanik">@bszczepanik</a>
+						</small>
+
+
+
+
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

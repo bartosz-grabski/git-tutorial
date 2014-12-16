@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Bitowy warsztat gitowy</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+
+            div.spacer50 {
+                margin: 10px 0;
+            }
+
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">Bitowy warsztat gitowy</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li><a href="index.html">Warsztaty</a></li>
+                            <li><a href="preparation.html">Wymagania</a></li>
+                            <li><a href="config.html">Konfiguracja</a></li>
+                            <li><a href="workshop.html">Przebieg warsztatu</a></li>
+                            <li class="active"><a href="commands.html">Polecenia</a></li>
+                            <li><a href="hints.html">Dobre rady</a></li>
+                            <li><a href="../prezentacja/index.html">Prezentacja</a></li>
+                            <li><a href="extra.html">Więcej</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <!-- Main hero unit for a primary marketing message or call to action -->
+            <div class="hero-unit">
+                <h1>Git jest git!</h1>
+                
+                Przyjdź i poznaj jeden z najpopularniejszych systemów kontroli wersji w praktyce.
+            </div>
+
+
+
+
+<div class="span12">
+    <h2>Polecenia użyte podczas warsztatów</h2>
+    <div>
+        <h4>Część mniej zaawansowana</h4>
+
+        <ul>
+            <li> 
+                <span class="label label-important">git init</span> 
+                inicjalizacja repozytorium w bierzącym katalogu
+            </li>
+            <li> 
+                <span class="label label-important">git status</span>
+                aktualny stan katalogu roboczego (zmienione, dodane, usunięte pliki)
+            </li>
+            <li> 
+                <span class="label label-important">git add converter.py</span> 
+                dodanie pliku converter.py do najbliższego commita (stage'owanie pliku)
+            </li>
+            <li> 
+                <span class="label label-important">git commit -m "commit message"</span> 
+                commitowanie zmian
+            </li>
+            <li> 
+                <span class="label label-important">git remote add origin git@github.com:Mequrel/bit-workshop.git</span> 
+                dodanie adresu repozytorium zewnętrznego
+            </li>
+            <li> 
+                <span class="label label-important">git clone git@github.com:Mequrel/bit-workshop.git</span> 
+                skopiowanie repozytorium zewnętrznego
+            </li>
+
+             <li> 
+                <span class="label label-important"> git pull [origin master]</span> 
+                pobranie zmian z zewnętrznego repozytorium ( = <span class="label label-important"> git fetch</span> + <span class="label label-important"> git merge</span>)
+            </li>
+
+            <li> 
+                <span class="label label-important"> git push [origin master]</span> 
+                wypchnięcie naszych zmian do zewnętrznego repozytorium
+            </li>
+
+            <li> 
+                <span class="label label-important"> git diff</span> 
+                sprawdzenie różnicy pomiędzy ostatnim commitem a nie zastage'owanymi plikami
+            </li>
+            <li> 
+                <span class="label label-important"> git log</span> 
+                wyświetlenie historii commitów (tekstowo)
+            </li>
+            <li> 
+                <span class="label label-important"> gitk</span> 
+                wyświetlenie historii commitów (graficznie)
+            </li>
+            <li> 
+                <span class="label label-important"> git mergetool</span> 
+                uruchomienie narzędzia do rozwiązywania konfliktów
+            </li>
+            <li> 
+                <span class="label label-important"> 
+            git commit --amend -m "Nowy commit message"</span> 
+                dodanie zmian do poprzedniego commita i/lub poprawienie commit message
+            </li>
+
+            
+        </ul>
+    </div>
+
+    <h4>Część bardziej zaawansowana</h4>
+    <div>
+        <ul>
+            <li> 
+                <span class="label label-important">git branch</span> 
+                wylistowanie branchy
+            </li>
+            <li> 
+                <span class="label label-important">git checkout file-font-loader</span> 
+                zmiana brancha na file-font-loader
+            </li>
+            <li> 
+                <span class="label label-important">git merge file-font-loader</span> 
+                merge'owanie brancha file-font-loader do bieżącego brancha
+            </li>
+            <li> 
+                <span class="label label-important">git stash</span> 
+                stashowanie zmian (odłożenie niescommitowanych zmian na stos)
+            </li>
+            <li> 
+                <span class="label label-important">git stash list</span> 
+                wylistowanie stashów (snapshotów)
+            </li>
+            <li> 
+                <span class="label label-important">git stash apply</span> 
+                zaaplikowanie stasha znajdującego się na wierzchu stosu
+            </li>
+            <li> 
+                <span class="label label-important">git stash drop</span> 
+                usunięcie stasha ze stosu
+            </li>
+            <li> 
+                <span class="label label-important">git checkout -- font.py</span> 
+                anulowanie wszystkich zmian w pliku font.py od czasu ostatniego commita
+            </li>
+            <li> 
+                <span class="label label-important">git reset HEAD~1 --soft</span> 
+                anulowanie samego działania polecenia commit (zmiany w plikach zostają zachowane)
+            </li>
+            <li> 
+                <span class="label label-important">git reset HEAD~1 --hard</span> 
+                anulowanie ostatniego commita (wraz ze zmianami które wprowadził)
+            </li>
+            <li> 
+                <span class="label label-important">git revert HEAD</span> 
+                wygenerowanie commita, który odkręca wszystkie zmiany wprowadzone przez ostatni commit
+            </li>
+            <li> 
+                <span class="label label-important">git blame converter.py</span> 
+                wyświetlenie historii pliku converter.py w taki sposób, by widzieć kto ostatni modyfikował daną linijkę
+            </li>
+        </ul>   
+    </div>  
+</div>
+
+
+
+
+
+
+                <div class="row">
+            </div>
+
+            <hr>
+
+            <footer>
+                <p>&copy; Bartłomiej Szczepanik, BIT AGH 2013</p>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

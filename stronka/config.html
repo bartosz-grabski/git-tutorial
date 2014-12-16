@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Bitowy warsztat gitowy</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">Bitowy warsztat gitowy</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li><a href="index.html">Warsztaty</a></li>
+                            <li><a href="preparation.html">Wymagania</a></li>
+                            <li class="active"><a href="config.html">Konfiguracja</a></li>
+                            <li><a href="workshop.html">Przebieg warsztatu</a></li>
+                            <li><a href="commands.html">Polecenia</a></li>
+                            <li><a href="hints.html">Dobre rady</a></li>
+                            <li><a href="../prezentacja/index.html">Prezentacja</a></li>
+                            <li><a href="extra.html">Więcej</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <!-- Main hero unit for a primary marketing message or call to action -->
+            <div class="hero-unit">
+                <h1>Git jest git!</h1>
+                
+                Przyjdź i poznaj jeden z najpopularniejszych systemów kontroli wersji w praktyce.
+            </div>
+
+
+
+
+                <div class="span6">
+                    <h2>Konfiguracja</h2>
+
+                    <h4>Konsola</h4>
+                    <p>
+                       <ol>
+                        <li>Uruchamiamy konsolę gitową (Git Shell w GitHub for Windows) lub zwykłą konsolę na linuksie</li>
+                       </ol> 
+                    </p>
+
+                    <h4>Git</h4>
+                    <p>
+                       <ol>
+                        <li>Konfigurujemy nasze dane, którymi podpisywać będziemy commity:
+                            <pre><code>~ git config --global user.name "Mequrel"
+~ git config --global user.email "me@here.com"</code></pre>
+                        </li>
+                        <li>Konfigurujemy narzędzie do rozwiązywania konfliktów (przykład dla kdiff3):
+                            <pre><code>~ git config --global merge.tool kdiff3
+~ git config --global mergetool.kdiff3.path 'C:\Program Files (x86)\KDiff3\kdiff3.exe'</code></pre>
+                        </li>
+                        
+                       </ol> 
+                    </p>
+
+                    <h4>Repozytorium na GitHubie</h4>
+                    <p>
+                        <ol>
+                            <li>Jedna osoba z pary tworzy nowe repozytorium.</li>
+                            <li>Dodaje też drugą osobę jako współpracownika i daje mu prawa do edycji</li>
+                        </ol>
+                    </p>
+
+                    <h4>Skrypt `mayday`</h4>
+                    <p>
+                        <ol>
+                            <li> Pobieramy paczkę ze skryptem: 
+                                <ul>
+                                    <li> Wersja dla systemu <a href="skrypty/mayday_win.zip">Windows</a> </li>
+                                    <li> Wersja dla systemu <a href="skrypty/mayday_linux.zip">Linux</a> </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Edytujemy plik config.ps1 (Windows) lub config.sh (Linux) i podajemy adres SSH stworzonego repozytorium:
+                                <pre><code>$github_url = "git@github.com:Mequrel/bit-workshop.git"    [WINDOWS]
+github_url="git@github.com:Mequrel/bit-workshop.git"       [LINUX]</code></pre>
+
+                            </li>
+                            <li> Użycie:
+                                <pre><code type="bash">~ .\mayday.ps1 N U    [WINDOWS]
+~ ./mayday.sh N U     [LINUX]</code></pre>
+                                Gdzie N oznacza nr stanu, do którego chcemy przywrócić nasze repozytorium, a U (0 lub 1) oznacza czy mamy aktualizować zewnętrzne repozytorium.
+                                <div class="alert alert-block">UWAGA! Jeżeli pracujesz w parze, to druga osoba musi również uruchomić skrypt z tym samym parametrem. Jedna osoba z pary powinna mieć U=1</div>
+                        </ol>
+                    </p>
+
+
+                    <h4>Stworzenie katalogów roboczych</h4>
+                    <p>
+                       <ol>
+                        <li>Uruchamiamy:
+                            <pre><code type="bash">~ .\mayday.ps1 0 0    [WINDOWS]
+~ ./mayday.sh 0 0     [LINUX]</code></pre>
+                        </li>
+                        <li>Przechodzimy do katalogu ./gitlabs/1 lub ./gitlabs/2 w zależności od naszej roli w parze.</li>                        
+                       </ol> 
+                    </p>
+
+            
+</div>
+
+
+
+
+                <div class="row">
+            </div>
+
+            <hr>
+
+            <footer>
+                <p>&copy; Bartłomiej Szczepanik, BIT AGH 2013</p>
+            </footer>
+
+        </div> <!-- /container -->
+
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
